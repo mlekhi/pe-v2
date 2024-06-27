@@ -7,7 +7,22 @@ from flask import Flask, render_template, request, jsonify
 from app.text import about_text_maya, work_text_maya, education_text_maya
 from dotenv import load_dotenv
 
+load_dotenv('./environment.env')
 app = Flask(__name__)
+
+def mapping(coords):
+    markers = ""
+
+    for id, (lat, lon) in enumerate(coords):
+        # Create the marker and its pop-up for each shop
+        idd = f"a{id}"
+        markers += "var {idd} = L.marker([{latitude}, {longitude}]);\
+                            {idd}.addTo(map);".format(
+            idd=idd,
+            latitude=lat,
+            longitude=lon,
+        )
+    return coords, markers  
 
 @app.route("/")
 def index():
