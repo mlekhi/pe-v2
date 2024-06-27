@@ -1,4 +1,6 @@
 work_text_maya = [
+    "Machine Learning Software Engineer @ Borealis AI",
+    "Engineered a custom container for SLURM jobs, leading to a 30% reduction in cloud computing costs",
     "Technology Operations Intern @ TD Bank",
     "Leveraged Confiform, JSON, HTML to create an automated Confluence & Jira hub to facilitate quantifying the impact of TD’s Agile @Scale practice, streamlining internal operations for 700 practitioners.",
     "Front-End UI/UX Developer @ NextGen EduCare",
