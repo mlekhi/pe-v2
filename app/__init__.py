@@ -4,6 +4,8 @@ import re
 import datetime
 
 from flask import Flask, render_template, request, jsonify
+from app.text import about_text, work_text, about_text_maya, work_text_maya, education_text, education_text_maya
+from dotenv import load_dotenv
 
 app = Flask(__name__)
 
