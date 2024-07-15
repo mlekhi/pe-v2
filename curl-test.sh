@@ -2,19 +2,19 @@
 
 BASE_URL="http://pe-portfolio.duckdns.org:5000/timeline"
 
-create_timeline_post() {
-    echo "Creating timeline post..."
-    curl -X POST -F "name=Test User" -F "email=test@example.com" -F "content=This is a test post." $BASE_URL/api/timeline_post
-}
+echo "Test 1: Creating timeline post..."
+curl --request POST "${BASE_URL}" \
+     --data-urlencode "name=Wei" \
+     --data-urlencode "email=wei.he@mlh.io" \
+     --data-urlencode "content=Just Added Database to my portfolio site!"
 
-get_timeline_posts() {
-    echo "Getting timeline posts..."
-    curl $BASE_URL/api/timeline_post
-}
+echo
 
-create_timeline_post
+# Test 2: POST request to create another timeline post
+echo "Test 2: Creating another timeline post..."
+curl --request POST "${BASE_URL}" \
+     --data-urlencode "name=Wei" \
+     --data-urlencode "email=wei.he@mlh.io" \
+     --data-urlencode "content=Testing my endpoints with postman and curl."
 
-get_timeline_posts
-
-echo "Testing complete."
-
+echo
