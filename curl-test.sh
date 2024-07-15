@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BASE_URL="http://localhost:5000"
+BASE_URL="http://pe-portfolio.duckdns.org:5000/timeline"
 
 create_timeline_post() {
     echo "Creating timeline post..."
