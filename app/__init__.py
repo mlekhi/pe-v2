@@ -7,7 +7,7 @@ import datetime
 
 from flask import Flask, render_template, request, jsonify
 from dotenv import load_dotenv
-from app.text import about_text, work_text, about_text_maya, work_text_maya, education_text, education_text_maya
+from app.text import about_text_maya, work_text_maya, education_text, education_text_maya
 
 load_dotenv('./environment.env')
 app = Flask(__name__)
@@ -72,13 +72,7 @@ def index():
 @app.route("/hobbies")
 def hobbies():
     title = "Our Team's Hobbies"
-    hobbies_list = [
-        {"title": "Reading", "image": "static/img/reading.jpg"},
-        {"title": "Gardening", "image": "static/img/gardening.jpg"},
-        {"title": "Painting", "image": "static/img/painting.jpg"},
-        {"title": "Cooking", "image": "static/img/cooking.jpg"},
-    ]
-
+    hobbies_list = hobbies_text_maya
     return render_template("hobbies.html", title=title, hobbies_list=hobbies_list)
 
 @app.route('/api/timeline_post', methods=['POST'])
