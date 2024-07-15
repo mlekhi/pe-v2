@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BASE_URL="http://pe-portfolio.duckdns.org:5000/timeline"
+BASE_URL="http://pe-portfolio.duckdns.org:5000/api/timeline_post"
 
 echo "Test 1: Creating timeline post..."
 curl --request POST "${BASE_URL}" \
