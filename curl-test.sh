@@ -12,13 +12,8 @@ get_timeline_posts() {
     curl $BASE_URL/api/timeline_post
 }
 
-# Main script flow
-echo "Testing Timeline Post Endpoints..."
-
-# Create a timeline post
 create_timeline_post
 
-# Get timeline posts to verify
 get_timeline_posts
 
 echo "Testing complete."
