@@ -4,7 +4,7 @@
 tmux kill-session -a
 
 # change directory to project folder
-cd pe-portfolio
+cd pe-v2
 
 # fetch latest changes from main branch
 git fetch
@@ -20,10 +20,10 @@ pip install -r requirements.txt
 tmux new-session -d -s myflaskapp
 
 # change directory to project folder within Tmux session
-tmux send-keys -t myflaskapp "cd pe portfolio" Enter
+tmux send-keys -t myflaskapp "cd pe-v2" Enter
 
 # activate Python venv within Tmux session
 tmux send-keys -t myflaskapp "source python3-virtualenv/bin/activate" Enter
 
 # start Flask server within Tmux session
-tmux send-keys -t myflaskapp "python app.py" Enter
+tmux send-keys -t myflaskapp "flask run host=0.0.0.0" Enter
