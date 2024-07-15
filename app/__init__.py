@@ -7,7 +7,7 @@ import datetime
 
 from flask import Flask, render_template, request, jsonify
 from dotenv import load_dotenv
-from app.text import about_text_maya, work_text_maya, education_text, education_text_maya
+from app.text import about_text_maya, work_text_maya, education_text_maya
 
 load_dotenv('./environment.env')
 app = Flask(__name__)
