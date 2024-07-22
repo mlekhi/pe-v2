@@ -5,6 +5,7 @@ from app import TimelinePost
 
 MODELS = [TimelinePost]
 
+
 # use an in-memory SQLite for tests.
 test_db = SqliteDatabase(':memory:')
 

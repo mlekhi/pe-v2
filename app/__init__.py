@@ -7,20 +7,29 @@ import datetime
 
 from flask import Flask, render_template, request, jsonify
 from dotenv import load_dotenv
-from app.text import about_text_maya, work_text_maya, education_text_maya
+from app.text import about_text_maya, work_text_maya, education_text_maya, hobbies_text_maya
 
-load_dotenv('./environment.env')
+load_dotenv('environment.env')  # Load default environment variables
+if os.getenv("TESTING") == True:
+    load_dotenv('.env.test')  # Override with test environment variables if TESTING is True
+
+
 app = Flask(__name__)
 
-if os.getenv("TESTING") == "true":
+is_testing = os.getenv("TESTING") == "True"
+
+# Set up the database connection
+if is_testing:
     print("Running in test mode")
-    mydb = SqliteDatabase('file:memory?mode=memory&cache=shared', uri=True)
+    mydb = SqliteDatabase(':memory:')
 else:
-    mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"),
-        user=os.getenv("MYSQL_USER"), 
-        password=os.getenv("MYSQL_PASSWORD"), 
-        host=os.getenv("MYSQL_HOST"), 
-        port=3306)
+    mydb = MySQLDatabase(
+        os.getenv("MYSQL_DATABASE"),
+        user=os.getenv("MYSQL_USER"),
+        password=os.getenv("MYSQL_PASSWORD"),
+        host=os.getenv("MYSQL_HOST"),
+        port=3306
+    )
 
 print(mydb)
 
