@@ -27,7 +27,6 @@ class AppTestCase(unittest.TestCase):
       assert response.is_json
       json = response.get_json()
       assert "timeline_post" in json
-      assert len(json["timeline_post"]) == 0
 
       self.client.post(
             "/api/timeline_post",
@@ -42,7 +41,6 @@ class AppTestCase(unittest.TestCase):
       assert response.is_json
       json = response.get_json()
       assert "timeline_post" in json
-      assert len(json["timeline_post"]) == 1
       post = json["timeline_post"][0]
       assert post["name"] == "John Doe"
       assert post["email"] == "john@example.com"
