@@ -30,6 +30,7 @@ else:
         host=os.getenv("MYSQL_HOST"),
         port=3306
     )
+    mydb.connect()
 
 print(mydb)
 
@@ -42,7 +43,6 @@ class TimelinePost(Model):
     class Meta:
         database = mydb
 
-mydb.connect()
 mydb.create_tables([TimelinePost])
 
 def mapping(coords):
