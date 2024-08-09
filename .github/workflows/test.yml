@@ -30,6 +30,8 @@ jobs:
         run: chmod +x ./run_test.sh
 
       - name: Run Tests
+        env:
+          TESTING: "True"
         run: ./run_test.sh
 
 env:

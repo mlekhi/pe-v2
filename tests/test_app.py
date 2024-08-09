@@ -3,8 +3,6 @@ import unittest
 import os
 from dotenv import load_dotenv
 
-
-
 load_dotenv(dotenv_path='.env.test')
 
 from app import app
