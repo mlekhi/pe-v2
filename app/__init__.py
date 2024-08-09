@@ -21,8 +21,9 @@ is_testing = os.getenv("TESTING") == "True"
 # Set up the database connection
 if is_testing:
     print("Running in test mode")
-    mydb = SqliteDatabase(':memory:')
+    mydb = SqliteDatabase("file:memory?mode=memory&cache=shared", uri=True)
 else:
+    print("WRONG ONE")
     mydb = MySQLDatabase(
         os.getenv("MYSQL_DATABASE"),
         user=os.getenv("MYSQL_USER"),
@@ -30,6 +31,7 @@ else:
         host=os.getenv("MYSQL_HOST"),
         port=3306
     )
+
 
 print(mydb)
 
