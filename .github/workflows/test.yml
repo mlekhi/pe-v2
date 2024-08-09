@@ -29,9 +29,6 @@ jobs:
       - name: Make run_test.sh Executable
         run: chmod +x ./run_test.sh
 
-      - name: Print environment variables
-        run: printenv
-
       - name: Run Tests
         run: ./run_test.sh
 
