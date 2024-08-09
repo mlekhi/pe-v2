@@ -15,9 +15,7 @@ if os.getenv("TESTING") == "True":
 
 
 app = Flask(__name__)
-is_testing = os.getenv("TESTING") == "True"
 
-# Set up the database connection
 if is_testing:
     print("Running in test mode")
     mydb = SqliteDatabase("file:memory?mode=memory&cache=shared", uri=True)
