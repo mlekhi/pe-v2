@@ -10,11 +10,12 @@ from dotenv import load_dotenv
 from app.text import about_text_maya, work_text_maya, education_text_maya, hobbies_text_maya
 
 load_dotenv('environment.env')  # Load default environment variables
-if os.getenv("TESTING") == "True":
+if os.getenv("TESTING", "false").lower() == "true":
     load_dotenv('.env.test')  # Override with test environment variables if TESTING is True
 
-
 app = Flask(__name__)
+
+is_testing = os.getenv("TESTING", "false").lower() == "true"
 
 if is_testing:
     print("Running in test mode")
