@@ -20,6 +20,7 @@ if is_testing:
     print("Running in test mode")
     mydb = SqliteDatabase("file:memory?mode=memory&cache=shared", uri=True)
 else:
+    print("WRONG ONE")
     mydb = MySQLDatabase(
         os.getenv("MYSQL_DATABASE"),
         user=os.getenv("MYSQL_USER"),
