@@ -7,7 +7,7 @@ MODELS = [TimelinePost]
 
 
 # use an in-memory SQLite for tests.
-# test_db = SqliteDatabase(':memory:')
+test_db = SqliteDatabase(':memory:')
 
 class TestTimelinePost(unittest.TestCase):
   def setUp(self):
