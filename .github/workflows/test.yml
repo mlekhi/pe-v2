@@ -30,9 +30,10 @@ jobs:
         run: chmod +x ./run_test.sh
 
       - name: Run Tests
-        run: python -m unittest discover -v tests
-        env:
-          TESTING: "True"
+        run: ./run_test.sh
+
+      - name: Print environment variables
+        run: printenv
 
 env:
   TESTING: true
